@@ -10,14 +10,10 @@ set /p venvName="Enter name of virtual environment: "
 :: Prompt user to set Python version number
 set /p pythonVersion="Enter Python version number (press Enter to install latest): "
 
-:: Activate Ananconda Prompt
+:: Activate base environment
 call %root%\Scripts\activate.bat
 
-:: Create virtual environment with name of venvName in the default envs folder,
-:: in my case "D:\anaconda3\envs"
-:: [%venvName% = string variable set at the start]
-:: call conda create -n %venvName% -y python=3.9
-:: call conda create -n %venvName% -y nb_conda_kernels jupyter
+:: Create virtual environment with name of venvName in the default envs folder, default being "D:\anaconda3\envs"
 if pythonVersion==$null (
    call conda create -n %venvName% -y ^
    nb_conda_kernels numpy pandas jupyter
@@ -28,8 +24,7 @@ if pythonVersion==$null (
 )
 
 :: Activate the virtual environment
-:: (this initial activation saves you typing this in the Terminal of VSCode to get
-:: this environment to populate in the Jupyter Notebook dropdown list of environments)
+:: (this initial activation helps to populate this virtual environment in the dropdown list of environments in VSCode or Jupyter Notebook)
 call conda activate %venvName%
 
 pause
@@ -37,7 +32,7 @@ pause
 :: ------------------------------
 :: all below unnecessary (just kept here as a record)
 
-:: Install nb_conda_kernels for VS Code to detect the environment (might be needed for both VSCode and Jupyter Notebook
+:: Install nb_conda_kernels for VSCode and Jupyter Notebook to detect the environment
 :: call conda install nb_conda_kernels -y
 
 :: Install ipykernel which provides the IPython kernel for Jupyter (seems unneeded)
