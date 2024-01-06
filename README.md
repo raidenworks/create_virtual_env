@@ -1,5 +1,10 @@
 ## Windows batch file for quickly creating python virtual environment
 
+### Motivation
+
+I find I need to create virtual environments quickly for different projects. With this script, you just need to enter the virtual environment name and Python version (if needed).
+It assumes you already have your Anaconda or Miniconda installed and running properly.
+
 ### Instructions
 
 1. Save the `batch_conda_create.bat` file to whatever directory you wish to execute it from. Right-click to edit with your favoured text-editor, e.g. Notepad. Change the `root` value to where your Anaconda or Miniconda is installed in. (I prefer to hard code this in the script as my Anaconda installation directory does not change often, if at all.)
