@@ -1,4 +1,4 @@
-## Windows batch file for quickly creating Python virtual environment
+## Windows script for quickly creating Python virtual environment
 
 ### Motivation
 
